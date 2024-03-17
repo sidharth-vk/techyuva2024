@@ -1,0 +1,220 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Count - Particles</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'eventpage/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'eventpage/css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'eventpage/css/main.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'eventpage/css/demo.css' %}"> {% endcomment %}
+
+    <!-- script
+    ================================================== -->
+    <script src="{% static 'eventpage/js/modernizr.js' %}"></script>
+    <script src="{% static 'eventpage/js/pace.min.js' %}"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+{% for event_detail in event_detail %}
+<body>
+
+    <!-- home
+    ================================================== -->
+    <main class="s-home s-home--particles">
+
+        <div id="particles-js" class="home-particles"></div>
+        
+        <div class="gradient-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="home-logo-2">
+                <a href="/" style="color:white; font-weight:bold;">
+                    TechYuva 2024
+                </a>
+            </div>
+
+            <div class="row home-content__main">
+
+                <div class="col-eight home-content__text pull-right">
+                    <h3>SUIET PResents</h3>
+
+                    <h1>
+                    {{event_detail.name}}
+                    </h1>
+
+                    <p>Venue : {{event_detail.venue}}<br>Entry Fee : {{event_detail.ef}}</p>
+             
+
+                    <div class="home-content__subscribe">
+                        <a href="{% url "event_register_page" event_detail.slug %}">Register</a>
+                    </div>
+                </div>  <!-- end home-content__text -->
+
+                <div class="col-four home-content__counter">
+                    <h3>Event Starts In</h3>
+
+                    <div class="home-content__clock">
+                        <div class="top">
+                            <div class="time days">
+                                325
+                                <span>Days</span>
+                            </div>
+                        </div>    
+                        <div class="time hours">
+                            09
+                            <span>H</span>
+                        </div>
+                        <div class="time minutes">
+                            54
+                            <span>M</span>
+                        </div>
+                        <div class="time seconds">
+                            30
+                            <span>S</span>
+                        </div>
+                    </div>  <!-- end home-content__clock -->
+                </div>  <!-- end home-content__counter -->
+
+            </div>  <!-- end home-content__main -->
+
+            <ul class="home-social">
+                <li>
+                <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a>
+                </li>
+                <li>
+                <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
+                </li>
+                <li>
+                <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                </li>
+                <li>
+                <a href="#0"><i class="fab fa-youtube" aria-hidden="true"></i><span>Youtube</span></a>
+                </li>
+               
+            </ul> <!-- end home-social -->
+
+            <div class="row home-copyright">
+                <span>Copyright © 2024 NEXEL - Futureize the Innovation</span> 
+                <span>Designed & Developed by: <a href="https://www.nexel.in">NEXEL</a></span>
+            </div> <!-- end home-copyright -->
+
+
+            <div class="home-content__line"></div>
+
+        </div> <!-- end home-content -->
+
+    </main> <!-- end s-home -->
+
+
+    <!-- info
+    ================================================== -->
+    <a class="info-toggle" href="#0">
+        <span class="info-menu-icon"></span>
+    </a>
+
+    <div class="s-info">
+
+        <div class="row info-wrapper">
+
+            <div class="col-seven tab-full info-main">
+                
+                <h1>{{event_detail.name}}</h1>
+                <p>
+                    {{event_detail.dec|safe}}
+                </p>
+
+                
+            </div>
+
+            <div class="col-four tab-full pull-right info-contact">
+
+                <div class="info-block">
+                    <h3>Faculty Cordinator</h3>
+                    <p>
+                        <a href="" class="info-email">{{event_detail.fc}}</a><br>
+                        <a href="tel:+91{{event_detail.fcph}}" class="'info-phone">+91 {{event_detail.fcph}}</a>
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Faculty Cordinator</h3>
+                    
+                    <p class="info-address">
+                        {{event_detail.ec1}}<br>
+                        +91 {{event_detail.ec1ph}}<br><br>
+                        {{event_detail.ec2}}<br>
+                        +91 {{event_detail.ec2ph}}
+                       
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Find Us On</h3>
+                    
+                    <ul class="info-social">
+                        <li>
+                            <a href="#0"><i class="fab fa-facebook" aria-hidden="true"></i>
+                            <span>Facebook</span></a>
+                        </li>
+                        <li>
+                            <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span>Twiiter</span></a>
+                        </li>
+                        <li>
+                            <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>Instagram</span></a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                
+            </div>  <!-- end info contact -->
+
+        </div>  <!-- end info wrapper -->
+
+    </div> <!-- end s-info -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{% static 'eventpage/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'eventpage/js/plugins.js' %}"></script>
+    <script src="{% static 'eventpage/js/polygons.js' %}"></script>
+    <script src="{% static 'eventpage/js/main.js' %}"></script>
+
+</body>
+{% endfor %}
+</html>

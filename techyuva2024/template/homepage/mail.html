@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Yuva 2024</title>
+<style>
+  /* Add your custom styles here */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  .header {
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+  }
+  .content {
+    padding: 20px 0;
+  }
+  .info {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h2>Tech Yuva 2024 - Registration Complete</h2>
+  </div>
+  <div class="content">
+    <p class="info">
+      Dear {{ name }},
+    </p>
+    <p class="info">
+      We are pleased to confirm your registration for the Event. Below are the details you provided:
+    </p>
+    <ul class="info">
+      <li><strong>Registration ID:</strong> {{ id }}</li>
+      <li><strong>Registration Fee:</strong> {{ entryfee }}</li>
+      <hr>
+      <li><strong>College Name:</strong> {{ collegename }}</li>
+      <li><strong>College ID:</strong> {{ collegeid }}</li>
+      <hr>
+      <li><strong>Verification URL:</strong> {{ url }}</li>
+      
+    </ul>
+    <p class="info">
+      Please ensure that you are available at the specified time and date for the Event.
+    </p>
+    <p class="info">
+      If you have any questions or need further assistance, feel free to contact us at .
+    </p>
+    <p class="info">
+      Best regards,<br>
+      <a href="https://techyuva.nexel.in/">Team Techyuva</a>
+      <hr>
+      <p>Mail Copyright @<a href="https://www.nexel.in/">Nexel</a></p>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
